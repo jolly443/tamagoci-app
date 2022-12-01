@@ -34,6 +34,8 @@ function Tamagotchi() {
       petStatus.innerHTML = "Nun kannst du deinem Tamagotchi einen Namen geben:";
 
       // Pet name show and hide if submitted
+
+      // TODO: SET NAME ONLY WHEN SUBMITTED
       const petInputField = document.getElementById('petNameInput');
       const petInputSubmit = document.getElementById('petNameSubmit');
       petInputField?.classList.remove("hidden")
