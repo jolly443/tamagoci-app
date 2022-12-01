@@ -1,9 +1,8 @@
-import { 
+import {
   useEffect,
   useState,
   React
- } from 'react'
- import { Container } from './Container';
+} from 'react'
 import husky_default from './assets/husky-default.png';
 import egg_closed from './assets/egg-closed.png'
 import egg_cracked from './assets/egg-cracked.png'
@@ -11,6 +10,14 @@ import './styles/Tamagotchi.css';
 
 
 function Tamagotchi() {
+  // Pet name popup
+  const triggerText = 'Name deines Tamagotchi';
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.name.value);
+    console.log(event.target.email.value);
+  };
+
   // Timer
   const [hatchTimer, setHatchTimer] = useState(10);
   const [petName, setPetName] = useState('Ei');
@@ -23,15 +30,16 @@ function Tamagotchi() {
   // Set pet (egg) picture depending on timer
   const [petPic, setPetPic] = useState(egg_closed);
   useEffect(() => {
-    if(hatchTimer < 5) {
+    if (hatchTimer < 5) {
       setPetPic(egg_cracked)
       setPetStatus("dabei zu schlüpfen")
     }
-    if(hatchTimer === 0) {
+    if (hatchTimer === 0) {
       setPetPic(husky_default)
-      const petStatus = document.getElementById('petStatus')
-      petStatus.innerHTML = ""
-      Popup()
+      const petStatus = document.getElementById('petStatus');
+      petStatus.innerHTML = "Nun kannst du deinem Tamagotchi einen Namen geben:";
+
+      // Pet name popup
     }
   })
 
@@ -40,9 +48,10 @@ function Tamagotchi() {
       <header>
         <h1 className="pet-name">{petName}</h1>
         <img src={petPic} alt="Pet" className="pet pet-border"></img>
-        <p id= "petStatus" className="pet-status">
+        <p id="petStatus" className="pet-status">
           Dein Tamagotchi ist {petStatus}
         </p>
+        <input id="pet-name-input" className="pet-input-field"/>
         <p>
           Tage übrig bis zum Schlüpfen: {hatchTimer}
         </p>
@@ -60,17 +69,3 @@ function Tamagotchi() {
 }
 
 export default Tamagotchi;
-
-const Popup = () => {
-  const triggerText = 'Open form';
-  const onSubmit = (event) => {
-    event.preventDefault(event);
-    console.log(event.target.name.value);
-    console.log(event.target.email.value);
-  };
-  return (
-    <div className="App">
-      <Container triggerText={triggerText} onSubmit={onSubmit} />
-    </div>
-  );
-};
