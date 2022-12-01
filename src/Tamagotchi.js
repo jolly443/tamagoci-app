@@ -1,44 +1,50 @@
 import { 
   useEffect,
-  useState
+  useState,
+  React
  } from 'react'
+ import { Container } from './Container';
 import husky_default from './assets/husky-default.png';
 import egg_closed from './assets/egg-closed.png'
+import egg_cracked from './assets/egg-cracked.png'
 import './styles/Tamagotchi.css';
 
 
 function Tamagotchi() {
   // Timer
-  const [counter, setCounter] = useState(60);
-  useEffect(() => {
-    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-  }, [counter]);
+  const [hatchTimer, setHatchTimer] = useState(10);
+  const [petName, setPetName] = useState('Ei');
+  const [petStatus, setPetStatus] = useState('noch nicht geschlüpft');
 
-  // Pet picture
+  useEffect(() => {
+    hatchTimer > 0 && setTimeout(() => setHatchTimer(hatchTimer - 1), 1000);
+  }, [hatchTimer]);
+
+  // Set pet (egg) picture depending on timer
   const [petPic, setPetPic] = useState(egg_closed);
   useEffect(() => {
-    if(counter < 58) {
+    if(hatchTimer < 5) {
+      setPetPic(egg_cracked)
+      setPetStatus("dabei zu schlüpfen")
+    }
+    if(hatchTimer === 0) {
       setPetPic(husky_default)
+      const petStatus = document.getElementById('petStatus')
+      petStatus.innerHTML = ""
+      Popup()
     }
   })
-  
-
-
-
-  const petName = "Ei";
-  var petStatus = "noch nicht geschlüpft";
-  var timeToHatch = "7 Stunden, 0 Minuten, 0 Sekunden";
 
   return (
     <div className="App">
       <header>
         <h1 className="pet-name">{petName}</h1>
         <img src={petPic} alt="Pet" className="pet pet-border"></img>
-        <p className="pet-status">
+        <p id= "petStatus" className="pet-status">
           Dein Tamagotchi ist {petStatus}
         </p>
         <p>
-          Tage übrig bis zum Schlüpfen: {counter}
+          Tage übrig bis zum Schlüpfen: {hatchTimer}
         </p>
         <div className="container">
           <button className="button">Lichtschalter</button>
@@ -54,3 +60,17 @@ function Tamagotchi() {
 }
 
 export default Tamagotchi;
+
+const Popup = () => {
+  const triggerText = 'Open form';
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.name.value);
+    console.log(event.target.email.value);
+  };
+  return (
+    <div className="App">
+      <Container triggerText={triggerText} onSubmit={onSubmit} />
+    </div>
+  );
+};
