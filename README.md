@@ -1,8 +1,9 @@
 # Tamagotchi game concept
 
 - Start with an egg that lasts a few days (e.g. 7 days)
+- The egg has different states (clean, rifted, open)
 - Watch the egg (temperature, light)
-- The pets (different models available) hatches from the egg after a few days if watched correctly (e.g. mood/health not below zero)
+- The pets (different models available) hatches from the egg after a few days if watched correctly (e.g. mood/health not below zero) and can be named after
 - Goal is to make the pet happy by:
     * Playing with it (feeling bored)
     * Petting it (feeling lonely)

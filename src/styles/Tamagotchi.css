@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  height: 100vh
+}
+
+.h1-header {
+  color: rgb(195, 149, 255)
+}
+
+.pet {
+  height: 20rem;
+  width: 20rem;
+}
+
+.pet-name {
+  color: #d54d7b;
+  font-family: "Great Vibes", cursive;
+  font-size: 4wrem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+
+.pet-status {
+  padding: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.pet-border {
+  background-color: rgba(245, 245, 245, 0.212);
+  border: 1px solid aliceblue;
+  border-radius: 8px;
+  box-shadow: 2px black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(118, 74, 136, 0.562);
+  color: aliceblue;
+  align-items: center;
+  border: 1px solid aliceblue;
+  font-size: smaller;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 2px black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

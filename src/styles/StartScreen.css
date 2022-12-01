@@ -1,0 +1,58 @@
+.App {
+    text-align: center;
+    height: 100vh
+}
+
+.h1-header {
+    color: rgb(195, 149, 255)
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-game-button {
+    width: 520px;
+    height: 120px;
+    background-color: transparent;
+    color: aliceblue;
+    align-items: center;
+    border: 1px solid aliceblue;
+    font-size: 32px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-group button {
+    margin: auto;
+    background-color: transparent;
+    /* Green background */
+    border: 1px solid rgb(253, 253, 253);
+    /* Green border */
+    color: white;
+    /* White text */
+    padding: 1rem 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    width: 50%;
+    /* Set a width if needed */
+    display: block;
+    /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none;
+    /* Prevent double borders */
+}
+
+.btn-group button:hover {
+    background-color: #c153ec;
+}
