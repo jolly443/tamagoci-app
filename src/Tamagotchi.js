@@ -10,25 +10,19 @@ import './styles/Tamagotchi.css';
 
 
 function Tamagotchi() {
-  // Pet name popup
-  const triggerText = 'Name deines Tamagotchi';
-  const onSubmit = (event) => {
-    event.preventDefault(event);
-    console.log(event.target.name.value);
-    console.log(event.target.email.value);
-  };
-
   // Timer
   const [hatchTimer, setHatchTimer] = useState(10);
-  const [petName, setPetName] = useState('Ei');
-  const [petStatus, setPetStatus] = useState('noch nicht geschlüpft');
-
   useEffect(() => {
     hatchTimer > 0 && setTimeout(() => setHatchTimer(hatchTimer - 1), 1000);
   }, [hatchTimer]);
 
   // Set pet (egg) picture depending on timer
+  const [petName, setPetName] = useState('Ei');
+  const [petStatus, setPetStatus] = useState('noch nicht geschlüpft');
   const [petPic, setPetPic] = useState(egg_closed);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
   useEffect(() => {
     if (hatchTimer < 5) {
       setPetPic(egg_cracked)
@@ -39,7 +33,11 @@ function Tamagotchi() {
       const petStatus = document.getElementById('petStatus');
       petStatus.innerHTML = "Nun kannst du deinem Tamagotchi einen Namen geben:";
 
-      // Pet name popup
+      // Pet name show and hide if submitted
+      const petInputField = document.getElementById('petNameInput');
+      const petInputSubmit = document.getElementById('petNameSubmit');
+      petInputField?.classList.remove("hidden")
+      petInputSubmit?.classList.remove("hidden")
     }
   })
 
@@ -51,7 +49,18 @@ function Tamagotchi() {
         <p id="petStatus" className="pet-status">
           Dein Tamagotchi ist {petStatus}
         </p>
-        <input id="pet-name-input" className="pet-input-field"/>
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <label>Du kann deinem Tamagotchi nun einen Namen geben:
+              <input
+                type="text"
+                value={petName}
+                onChange={(e) => setPetName(e.target.value)}
+              />
+            </label>
+            <input type="submit" />
+          </form>
+        </div>
         <p>
           Tage übrig bis zum Schlüpfen: {hatchTimer}
         </p>

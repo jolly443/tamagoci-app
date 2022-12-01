@@ -8,14 +8,14 @@
 }
 
 .pet {
-  height: 20rem;
-  width: 20rem;
+  height: 18rem;
+  width: 18rem;
 }
 
 .pet-name {
   color: #d54d7b;
   font-family: "Great Vibes", cursive;
-  font-size: 4wrem;
+  font-size: 2rem;
   font-weight: normal;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -58,4 +58,8 @@
   border-radius: 8px;
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hidden {
+  display: none;
 }
