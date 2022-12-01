@@ -1,3 +1,16 @@
+# Tamagotchi game concept
+
+- Start with an egg that lasts a few days (e.g. 7 days)
+- Watch the egg (temperature, light)
+- The pets (different models available) hatches from the egg after a few days if watched correctly (e.g. mood/health not below zero)
+- Goal is to make the pet happy by:
+    * Playing with it (feeling bored)
+    * Petting it (feeling lonely)
+    * Keeping it clean (dirt on the model)
+    * Keep the right temperature (may sweat=too hot, may shake=too cold)
+    * And more (tbd)
+- The pet has a happiness score. It is influenced by random events (may randomlly start to shake and if temperature is regulated, it will lose happiness score over time). If the happiness score is below zero, it will die. A new egg must be watched.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
