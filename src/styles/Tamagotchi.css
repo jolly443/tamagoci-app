@@ -38,6 +38,7 @@
 }
 
 .container {
+  margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,4 +63,8 @@
 
 .hidden {
   display: none;
+}
+
+.shown {
+  display: flex;
 }
