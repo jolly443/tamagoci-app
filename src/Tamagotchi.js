@@ -19,8 +19,9 @@ class Tamagotchi extends Component {
       petName: "Ei",
       petStatus: "noch nicht geschlüpft",
       petPic: egg_closed,
+      isHatched: false
     }
-    this.updateHatchTimer = this.updateHatchTimer.bind(this)  
+    this.updateHatchTimer = this.updateHatchTimer.bind(this) 
   }
 
   updateHatchTimer(val) {
@@ -28,6 +29,11 @@ class Tamagotchi extends Component {
     if(this.state.hatchTimer % 2 == 0) {
       // Half of timer passed
       this.setState({petPic: egg_cracked})
+    }
+    if(this.state.hatchTimer == 0) {
+      // Timer passed, egg hatches
+      this.setState({isHatched: true})
+      this.setState({petPic: husky_default})
     }
   }
 
