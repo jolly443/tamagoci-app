@@ -9,15 +9,17 @@ class HatchTimer extends React.Component {
       minutes: undefined,
       seconds: undefined
     };
-    this.then = addDays(Date.now(), props.countdownInDays)
+    // this.then = addDays(Date.now(), props.countdownInDays) //NORMAL FUNCTION
+    this.then = addTenSeconds(Date.now()) //TEST FUNCTION
   }
 
   componentDidMount() {
     setInterval(() => {
-      this.time_diff_ms = this.then - Date.now()
-      const time_dict = msToDate(this.time_diff_ms)
+      var time_diff_ms = this.then - Date.now()
+      time_diff_ms < 0 ? time_diff_ms = 0 : time_diff_ms = time_diff_ms
+      const time_dict = msToDate(time_diff_ms)
+      this.props.updateHatchTimer(time_diff_ms)
       this.setState(time_dict);
-      this.props.updateHatchTimer(this.time_diff_ms)
     }, 1000);
   }
 
@@ -43,6 +45,13 @@ class HatchTimer extends React.Component {
 function addDays(date, days) {
   var result = new Date(date);
   result.setDate(result.getDate() + days);
+  return result;
+}
+
+function addTenSeconds(date) {
+  var result = new Date(date);
+  const secBefore = result.getSeconds()
+  result.setSeconds(secBefore + 10)
   return result;
 }
 
