@@ -1,32 +1,59 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 
-const HatchTimer = ({ countdown }) => {
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+class HatchTimer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      days: undefined,
+      hours: undefined,
+      minutes: undefined,
+      seconds: undefined
+    };
+    this.then = addDays(Date.now(), props.countdownInDays)
+  }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.time_diff_ms = this.then - Date.now()
+      const time_dict = msToDate(this.time_diff_ms)
+      this.setState(time_dict);
+    }, 1000);
+  }
 
-  const getTime = () => {
-    const time = Date.now();
+  componentWillUnmount() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
 
-    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-    setMinutes(Math.floor((time / 1000 / 60) % 60));
-    setSeconds(Math.floor((time / 1000) % 60));
-  };
+  render() {
 
-  const [hatchTimer, setHatchTimer] = useState(countdown);
-  useEffect(() => {
-    hatchTimer > 0 && setTimeout(() => setHatchTimer(hatchTimer - 1), 1000);
-  }, [hatchTimer]);
+    return (
+      <div className='countdown-header'>
+        Zeit bis dein Tamagotchi schlüpft:
+        <p>
+          Tage: {this.state.days} Stunden: {this.state.hours} Minuten: {this.state.minutes} Sekunden: {this.state.seconds}
+        </p>
+      </div>
+    );
+  }
+}
 
-  return (
-    <div>
-      {hatchTimer}
-    </div>
-  );
-};
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+function msToDate(ms) {
+  const days = Math.floor(ms / (24 * 60 * 60 * 1000));
+  const daysms = ms % (24 * 60 * 60 * 1000);
+  const hours = Math.floor(daysms / (60 * 60 * 1000));
+  const hoursms = ms % (60 * 60 * 1000);
+  const minutes = Math.floor(hoursms / (60 * 1000));
+  const minutesms = ms % (60 * 1000);
+  const seconds = Math.floor(minutesms / 1000);
+  return { days, hours, minutes, seconds }
+}
 
 export default HatchTimer;

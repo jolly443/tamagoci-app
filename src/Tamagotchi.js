@@ -10,17 +10,16 @@ import egg_cracked from './assets/egg-cracked.png'
 import './styles/Tamagotchi.css';
 import HatchTimer from './HatchTimer.js'
 
-
 class Tamagotchi extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hatchTimer: 10,
       petName: "Ei",
       petStatus: "noch nicht geschlüpft",
       petPic: egg_closed,
     }
   }
+
   // // Set pet (egg) picture depending on timer
   // const [petName, setPetName] = useState('Ei');
   // const [petStatus, setPetStatus] = useState('noch nicht geschlüpft');
@@ -68,9 +67,7 @@ class Tamagotchi extends Component {
               <input type="submit" />
             </form>
           </div>
-          <p>
-            Tage übrig bis zum Schlüpfen: <HatchTimer countdown={10}/>
-          </p>
+          <HatchTimer countdownInDays={1} />
           <div className="container">
             <button className="button">Lichtschalter</button>
             <button className="button">Temperatur erhöhen</button>
