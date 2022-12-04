@@ -20,12 +20,17 @@ class Tamagotchi extends Component {
       petStatus: "noch nicht geschlüpft",
       petPic: egg_closed,
     }
-    this.handleHatchTimer = this.updateHatchTimer.bind(this)
+    this.updateHatchTimer = this.updateHatchTimer.bind(this)  
   }
 
   updateHatchTimer(val) {
     this.setState({hatchTimer: val});
+    if(this.state.hatchTimer % 2 == 0) {
+      // Half of timer passed
+      this.setState({petPic: egg_cracked})
+    }
   }
+
 
   // // Set pet (egg) picture depending on timer
   // const [petName, setPetName] = useState('Ei');
@@ -74,7 +79,7 @@ class Tamagotchi extends Component {
               <input type="submit" />
             </form>
           </div>
-          <HatchTimer countdownInDays={1} updateHatchTimer={this.handleHatchTimer}/>
+          <HatchTimer countdownInDays={1} updateHatchTimer={this.updateHatchTimer}/>
           <div className="container">
             <button className="button">Lichtschalter</button>
             <button className="button">Temperatur erhöhen</button>
