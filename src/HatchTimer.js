@@ -17,6 +17,7 @@ class HatchTimer extends React.Component {
       this.time_diff_ms = this.then - Date.now()
       const time_dict = msToDate(this.time_diff_ms)
       this.setState(time_dict);
+      this.props.updateHatchTimer(this.time_diff_ms)
     }, 1000);
   }
 
