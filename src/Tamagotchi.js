@@ -1,6 +1,6 @@
 import {
   useEffect,
-  useState,
+  useRef,
   React,
   Component
 } from 'react'
@@ -16,12 +16,14 @@ class Tamagotchi extends Component {
     super(props);
     this.state = {
       hatchTimer: undefined,
-      petName: "",
+      petName: "Dein Tamagotchi",
       petNameInput: "",
       petStatus: "noch nicht geschlüpft",
       petPic: egg_closed,
-      isHatched: false
+      isHatched: false,
+      lightsOn: true
     }
+    this.switchLight = this. switchLight.bind(this)
     this.updateHatchTimer = this.updateHatchTimer.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -40,10 +42,8 @@ class Tamagotchi extends Component {
       this.setState({ petStatus: " frisch geschlüpft" })
       const petNameInput = document.getElementById('petNameInput');
       const hatchTimer = document.getElementById('hatchTimer');
-      hatchTimer?.classList.add("hidden")
-      hatchTimer?.classList.remove("shown")
-      petNameInput?.classList.remove("hidden")
-      petNameInput?.classList.add("shown")
+      hatchTimer.style.display = "none"
+      petNameInput.style.display = "flex"
     }
   }
 
@@ -52,19 +52,33 @@ class Tamagotchi extends Component {
     const petNameInput = document.getElementById('petNameInput');
     const petNameDisplay = document.getElementById('petNameDisplay');
     petNameInput?.remove()
-    petNameDisplay?.classList.remove("hidden")
-    petNameDisplay?.classList.add("shown")
+    petNameDisplay.style.display = 'flex'
     this.setState({petNameInput: this.state.petName = this.state.petNameInput})
+  }
+
+  switchLight(e) {
+    e.preventDefault(); //prevent reloading the page
+    const petFrame =  document.getElementById('petFrame')
+    if(this.state.lightsOn === true) {
+      petFrame?.classList.add("pet-frame-dark")
+      this.setState({lightsOn: !this.state.lightsOn})
+    }
+    else {
+      petFrame?.classList.remove("pet-frame-dark")
+      this.setState({lightsOn: !this.state.lightsOn})
+    }
   }
   
   render() {
     return (
       <div className="App">
         <header>
-          <img src={this.state.petPic} alt="Pet" className="pet pet-border"></img>
+          <div id="petFrame" className="pet-frame-light">
+            <img id="" src={this.state.petPic} alt="Pet" className="pet-pic"></img>
+          </div>
           <div id="petNameDisplay" className="container hidden pet-name">{this.state.petName}</div>
           <p id="petStatus" className="pet-status">
-            Dein Tamagotchi ist {this.state.petStatus}
+            {this.state.petName} ist {this.state.petStatus}
           </p>
           <div id="petNameInput" className="container hidden">
             <form onSubmit={null}>
@@ -82,7 +96,7 @@ class Tamagotchi extends Component {
             <HatchTimer countdownInDays={1} updateHatchTimer={this.updateHatchTimer} />
           </div>
           <div className="container">
-            <button className="button">Lichtschalter</button>
+            <button className="button" onClick={this.switchLight}>Lichtschalter</button>
             <button className="button">Temperatur erhöhen</button>
             <button className="button">Temperatur senken</button>
             <button className="button">Füttern</button>

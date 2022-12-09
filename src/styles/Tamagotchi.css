@@ -7,7 +7,15 @@
   color: rgb(195, 149, 255)
 }
 
-.pet {
+.container {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pet-pic {
   height: 18rem;
   width: 18rem;
 }
@@ -28,21 +36,23 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.pet-border {
-  background-color: rgba(245, 245, 245, 0.212);
+.pet-frame-light {
+  width: 20rem;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(223, 220, 192, 0.514);
   border: 1px solid aliceblue;
   border-radius: 8px;
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 3rem;
+  margin: auto
 }
 
-.container {
-  margin: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.pet-frame-dark {
+  background-color: rgba(10, 8, 8, 0.452);
 }
 
 .button {
@@ -59,6 +69,19 @@
   border-radius: 8px;
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(178, 169, 182, 0.562);
+}
+
+.button:active {
+  transform: scale(0.87);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 
 .button-pet-input {
@@ -76,6 +99,17 @@
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-left: 5px;
+}
+
+.button-pet-input:hover {
+  background-color: rgba(178, 169, 182, 0.562);
+}
+
+.button-pet-input:active {
+  transform: scale(0.87);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 
 .hidden {
