@@ -4,7 +4,7 @@ import {
   React,
   Component
 } from 'react'
-import husky_default from './assets/husky-default.png';
+import husky_default from './assets/husky-blinking.gif';
 import egg_closed from './assets/egg-closed.png'
 import egg_cracked from './assets/egg-cracked.png'
 import './styles/Tamagotchi.css';
