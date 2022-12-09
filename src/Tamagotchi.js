@@ -16,7 +16,7 @@ class Tamagotchi extends Component {
     super(props);
     this.state = {
       hatchTimer: undefined,
-      petName: "Ei",
+      petName: "",
       petNameInput: "",
       petStatus: "noch nicht geschlüpft",
       petPic: egg_closed,
@@ -37,7 +37,7 @@ class Tamagotchi extends Component {
       // Timer passed, egg hatches
       this.setState({ isHatched: true })
       this.setState({ petPic: husky_default })
-      this.setState({ petStatus: "geschlüpft" })
+      this.setState({ petStatus: " frisch geschlüpft" })
       const petNameInput = document.getElementById('petNameInput');
       const hatchTimer = document.getElementById('hatchTimer');
       hatchTimer?.classList.add("hidden")
@@ -58,6 +58,8 @@ class Tamagotchi extends Component {
     this.setState({petNameInput: this.state.petName = this.state.petNameInput})
   }
   
+
+  
   render() {
     return (
       <div className="App">
@@ -76,7 +78,7 @@ class Tamagotchi extends Component {
                   onChange={(e) => this.setState({petNameInput: e.target.value})}
                 />
               </label>
-              <button onClick={this.handleSubmit}/>
+              <button type="submit" className="button-pet-input" onClick={this.handleSubmit}>Name vergeben</button>
             </form>
           </div>
           <div id="hatchTimer">

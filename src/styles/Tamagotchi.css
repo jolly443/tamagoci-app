@@ -61,6 +61,23 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.button-pet-input {
+  width: 120px;
+  height: 25px;
+  background-color: rgba(118, 74, 136, 0.562);
+  color: aliceblue;
+  align-items: center;
+  border: 1px solid aliceblue;
+  font-size: smaller;
+  /* display: flex; */
+  align-content: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 2px black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left: 5px;
+}
+
 .hidden {
   display: none;
 }
