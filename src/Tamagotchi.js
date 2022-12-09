@@ -23,6 +23,7 @@ class Tamagotchi extends Component {
       isHatched: false
     }
     this.updateHatchTimer = this.updateHatchTimer.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   updateHatchTimer(val) {
@@ -37,23 +38,24 @@ class Tamagotchi extends Component {
       this.setState({ isHatched: true })
       this.setState({ petPic: husky_default })
       this.setState({ petStatus: "geschlüpft" })
-      const petName = document.getElementById('petName');
+      const petNameInput = document.getElementById('petNameInput');
       const hatchTimer = document.getElementById('hatchTimer');
       hatchTimer?.classList.add("hidden")
       hatchTimer?.classList.remove("shown")
-      petName?.classList.add("shown")
-      petName?.classList.remove("hidden")
+      petNameInput?.classList.remove("hidden")
+      petNameInput?.classList.add("shown")
     }
   }
 
   // TODO: Set PetName and HTML h1 when submitted
-  handleSubmit() {
-    const petName = document.getElementById('petName');
+  handleSubmit(e) {
+    e.preventDefault(); //prevent reloading the page
+    const petNameInput = document.getElementById('petNameInput');
     const petNameDisplay = document.getElementById('petNameDisplay');
-    petName?.classList.remove("shown")
-    petName?.classList.add("hidden")
+    petNameInput?.remove()
     petNameDisplay?.classList.remove("hidden")
     petNameDisplay?.classList.add("shown")
+    this.setState({petNameInput: this.state.petName = this.state.petNameInput})
   }
   
   render() {
@@ -61,11 +63,11 @@ class Tamagotchi extends Component {
       <div className="App">
         <header>
           <img src={this.state.petPic} alt="Pet" className="pet pet-border"></img>
-          <h1 id="petNameDisplay" className="container shown pet-name">asd</h1>
+          <div id="petNameDisplay" className="container hidden pet-name">{this.state.petName}</div>
           <p id="petStatus" className="pet-status">
             Dein Tamagotchi ist {this.state.petStatus}
           </p>
-          <div id="petName" className="container hidden">
+          <div id="petNameInput" className="container hidden">
             <form onSubmit={null}>
               <label>Du kann deinem Tamagotchi nun einen Namen geben:
                 <input
@@ -74,7 +76,7 @@ class Tamagotchi extends Component {
                   onChange={(e) => this.setState({petNameInput: e.target.value})}
                 />
               </label>
-              <input type="submit" onClick={this.handleSubmit}/>
+              <button onClick={this.handleSubmit}/>
             </form>
           </div>
           <div id="hatchTimer">

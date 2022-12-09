@@ -51,7 +51,7 @@ function addDays(date, days) {
 function addTenSeconds(date) {
   var result = new Date(date);
   const secBefore = result.getSeconds()
-  result.setSeconds(secBefore + 10)
+  result.setSeconds(secBefore + 4)
   return result;
 }
 
