@@ -47,7 +47,6 @@ class Tamagotchi extends Component {
     }
   }
 
-  // TODO: Set PetName and HTML h1 when submitted
   handleSubmit(e) {
     e.preventDefault(); //prevent reloading the page
     const petNameInput = document.getElementById('petNameInput');
@@ -57,8 +56,6 @@ class Tamagotchi extends Component {
     petNameDisplay?.classList.add("shown")
     this.setState({petNameInput: this.state.petName = this.state.petNameInput})
   }
-  
-
   
   render() {
     return (
