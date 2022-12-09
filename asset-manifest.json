@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f2441dbc.css",
-    "main.js": "/static/js/main.43ea54b9.js",
-    "static/js/787.9a226a08.chunk.js": "/static/js/787.9a226a08.chunk.js",
-    "static/media/husky-blinking.gif": "/static/media/husky-blinking.feb946ee1a670780eccc.gif",
-    "static/media/egg-cracked.png": "/static/media/egg-cracked.7babc0a6d50156aaee25.png",
-    "static/media/egg-closed.png": "/static/media/egg-closed.e95e0a2a9d301c284c1c.png",
-    "index.html": "/index.html",
-    "main.f2441dbc.css.map": "/static/css/main.f2441dbc.css.map",
-    "main.43ea54b9.js.map": "/static/js/main.43ea54b9.js.map",
-    "787.9a226a08.chunk.js.map": "/static/js/787.9a226a08.chunk.js.map"
+    "main.css": "/tamagoci-app/static/css/main.f2441dbc.css",
+    "main.js": "/tamagoci-app/static/js/main.488736ed.js",
+    "static/js/787.9a226a08.chunk.js": "/tamagoci-app/static/js/787.9a226a08.chunk.js",
+    "static/media/husky-blinking.gif": "/tamagoci-app/static/media/husky-blinking.feb946ee1a670780eccc.gif",
+    "static/media/egg-cracked.png": "/tamagoci-app/static/media/egg-cracked.7babc0a6d50156aaee25.png",
+    "static/media/egg-closed.png": "/tamagoci-app/static/media/egg-closed.e95e0a2a9d301c284c1c.png",
+    "index.html": "/tamagoci-app/index.html",
+    "main.f2441dbc.css.map": "/tamagoci-app/static/css/main.f2441dbc.css.map",
+    "main.488736ed.js.map": "/tamagoci-app/static/js/main.488736ed.js.map",
+    "787.9a226a08.chunk.js.map": "/tamagoci-app/static/js/787.9a226a08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f2441dbc.css",
-    "static/js/main.43ea54b9.js"
+    "static/js/main.488736ed.js"
   ]
 }
