@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/tamamotzi/static/css/main.f2441dbc.css",
+    "main.js": "/tamamotzi/static/js/main.e4e39bda.js",
+    "static/js/787.9a226a08.chunk.js": "/tamamotzi/static/js/787.9a226a08.chunk.js",
+    "static/media/husky-blinking.gif": "/tamamotzi/static/media/husky-blinking.feb946ee1a670780eccc.gif",
+    "static/media/egg-cracked.png": "/tamamotzi/static/media/egg-cracked.7babc0a6d50156aaee25.png",
+    "static/media/egg-closed.png": "/tamamotzi/static/media/egg-closed.e95e0a2a9d301c284c1c.png",
+    "index.html": "/tamamotzi/index.html",
+    "main.f2441dbc.css.map": "/tamamotzi/static/css/main.f2441dbc.css.map",
+    "main.e4e39bda.js.map": "/tamamotzi/static/js/main.e4e39bda.js.map",
+    "787.9a226a08.chunk.js.map": "/tamamotzi/static/js/787.9a226a08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2441dbc.css",
+    "static/js/main.e4e39bda.js"
+  ]
+}
