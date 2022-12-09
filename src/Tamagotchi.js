@@ -98,13 +98,15 @@ class Tamagotchi extends Component {
         <div id="hatchTimer">
           <HatchTimer countdownInDays={1} updateHatchTimer={this.updateHatchTimer} />
         </div>
-        <div className="container">
-          <button className="button" onClick={this.switchLight}>Lichtschalter</button>
-          <button className="button">Temperatur erhöhen</button>
-          <button className="button">Temperatur senken</button>
-          <button className="button">Füttern</button>
-          <button className="button">Sauber machen</button>
-          <button className="button">Spielen</button>
+        <div className="center">
+          <div className="container">
+            <button className="button" onClick={this.switchLight}>Lichtschalter</button>
+            <button className="button">Temperatur erhöhen</button>
+            <button className="button">Temperatur senken</button>
+            <button className="button">Füttern</button>
+            <button className="button">Sauber machen</button>
+            <button className="button">Spielen</button>
+          </div>
         </div>
       </div>
     );
