@@ -30,8 +30,10 @@
 }
 
 .pet-pic {
-  height: 12rem;
-  width: 12rem;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  scale: 180%
 }
 
 .pet-name {
@@ -51,7 +53,9 @@
 }
 
 .pet-frame-light {
-  width: 20rem;
+  margin: auto;
+  width: 15rem;
+  height: 7rem;
   align-items: center;
   display: flex;
   align-content: center;
@@ -62,7 +66,6 @@
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 3rem;
-  margin: auto;
   transition: 0.8s all;
 }
 

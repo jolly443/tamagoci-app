@@ -74,8 +74,10 @@ class Tamagotchi extends Component {
   render() {
     return (
       <div className='app'>
-        <div id="petFrame" className="pet-frame-light">
-          <img id="" src={this.state.petPic} alt="Pet" className="pet-pic"></img>
+        <div>
+          <div id="petFrame" className="pet-frame-light">
+            <img id="" src={this.state.petPic} alt="Pet" className="pet-pic"></img>
+          </div>
         </div>
         <div id="petNameDisplay" className="container hidden pet-name">{this.state.petName}</div>
         <p id="petStatus" className="pet-status">
