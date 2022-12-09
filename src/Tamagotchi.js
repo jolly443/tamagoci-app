@@ -43,7 +43,9 @@ class Tamagotchi extends Component {
       const petNameInput = document.getElementById('petNameInput');
       const hatchTimer = document.getElementById('hatchTimer');
       hatchTimer.style.display = "none"
-      petNameInput.style.display = "flex"
+      if(petNameInput !== null) {
+        petNameInput.style.display = "flex"
+      }
     }
   }
 
