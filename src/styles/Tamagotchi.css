@@ -48,7 +48,8 @@
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 3rem;
-  margin: auto
+  margin: auto;
+  transition: 0.8s all;
 }
 
 .pet-frame-dark {
