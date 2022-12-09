@@ -7,7 +7,9 @@ import Tamagotchi from './Tamagotchi';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Tamagotchi />
+    <body>
+        <Tamagotchi />
+    </body>
 )
 
 // If you want to start measuring performance in your app, pass a function

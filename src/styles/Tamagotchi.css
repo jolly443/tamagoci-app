@@ -1,23 +1,37 @@
-.App {
+.app {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  height: 100vh
 }
+
+@media screen and (max-width: 415px) {
+  .app .pet-frame-light {
+    overflow: scroll;
+    width: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    width: auto;
+  }
+}
+
 
 .h1-header {
   color: rgb(195, 149, 255)
 }
 
 .container {
-  margin: 2rem;
-  display: flex;
+  margin: 1rem auto;
+  display: inline-block;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.2rem;
 }
 
 .pet-pic {
-  height: 18rem;
-  width: 18rem;
+  height: 12rem;
+  width: 12rem;
 }
 
 .pet-name {
@@ -32,7 +46,7 @@
 }
 
 .pet-status {
-  padding: 15px;
+  padding: 0.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -44,7 +58,7 @@
   justify-content: center;
   background-color: rgba(223, 220, 192, 0.514);
   border: 1px solid aliceblue;
-  border-radius: 8px;
+  border-radius: 2rem;
   box-shadow: 2px black;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 3rem;
@@ -57,8 +71,9 @@
 }
 
 .button {
-  width: 90px;
-  height: 90px;
+  float: left;
+  width: 5rem;
+  height: 5rem;
   background-color: rgba(118, 74, 136, 0.562);
   color: aliceblue;
   align-items: center;
@@ -72,6 +87,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.2s all;
   cursor: pointer;
+  margin: 0.2rem;
 }
 
 .button:hover {
@@ -114,6 +130,7 @@
 }
 
 .hidden {
+  margin: auto;
   display: none;
 }
 
